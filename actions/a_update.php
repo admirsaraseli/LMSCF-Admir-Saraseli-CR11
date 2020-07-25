@@ -67,7 +67,7 @@
 		    		WHERE animal_id = {$id}"; 
 
 		        if(mysqli_multi_query($conn, $sql) === TRUE) {
-		           echo  "<h1>Successfully Updated</h1>";
+		           echo  "<h1 class='text-white'>Successfully Updated</h1>";
 		           header("Refresh: 3; url= ../admin.php");
 		        } else {
 		            echo "Error while updating : ". mysqli_error($conn);

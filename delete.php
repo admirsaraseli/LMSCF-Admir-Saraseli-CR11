@@ -54,7 +54,7 @@
         </nav>
     </header>
 	<div class="container mt-4 mx-auto text-center">
-		<h3 class="text-white">Do you really want to delete this animal?</h3>
+		<h3 class="text-white">Do you really want to delete this pet?</h3>
 		<form action ="actions/a_delete.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $id ?>" />
 		    <button class="btn btn-danger" type="submit">Yes, delete it!</button >

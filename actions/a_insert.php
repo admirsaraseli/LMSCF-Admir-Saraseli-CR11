@@ -69,7 +69,7 @@
 			('$name', '$image', '$location', '$age', '$description', '$type', '$hobbies')";
 			
 			if (mysqli_query($conn, $sql)) {
-			    echo "<h1>New pet created.<h1>";
+			    echo "<h1 class='text-white'>New pet created.<h1>";
 			    header("Refresh: 3; url= ../admin.php");
 			} else {
 			    echo "<h1 class='text-red'>Something went wrong, please try again: </h1>" .

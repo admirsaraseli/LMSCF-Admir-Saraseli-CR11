@@ -58,7 +58,7 @@
     			$sql = "DELETE FROM users WHERE user_id = {$id}";
 
     			if($conn->multi_query($sql) === TRUE) {
-    				echo "<h1>Successfully deleted!!</h1>" ;
+    				echo "<h1 class='text-white'>Successfully deleted!!</h1>" ;
     				header("Refresh: 3; url= ../admin.php");
     			} else {
     			echo "Error updating record : " . $conn->error;
