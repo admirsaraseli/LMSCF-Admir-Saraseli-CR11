@@ -59,6 +59,23 @@
             </div>
         </nav>
     </header>
+    <div class="container row row-cols-1 row-cols-md-3 row-cols-lg-3 mx-auto my-4 bg-warning w-75">
+        <div class="col  my-auto">
+            <form class="form-inline my-2 my-lg-0 text-center ">
+                <input class="form-control ml-auto mr-sm-2" type="search" id="search" placeholder="Search">
+                <button class="btn btn-dark my-2 my-sm-0 mr-auto" type="submit">Search</button>
+            </form>
+            <p id="result"></p>
+        </div>
+        <div class="col text-center my-auto mx-auto">
+            <h2>Adopt a friend :)</h2>
+        </div>
+        <div class="col text-center my-auto">
+            <div class='card bg-transparent'>
+                <img class="img-fluid mx-auto" src="img/logo.png" style="width: 60%">
+            </div>
+        </div>
+    </div>
 
 	<div class="container mt-4 mx-auto text-center">
 		<h3 class="text-white">Love this animal? Take with you home!</h3>

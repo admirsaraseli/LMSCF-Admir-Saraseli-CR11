@@ -43,18 +43,18 @@
                             Hi <?php echo $userRow['userName']; ?>
                         </span>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item my-auto">
                         <a href="login/logout.php?logout" class="nav-link  btn btn-outline-warning">Log out</a>
                     </li>
                 </ul>   
             </div>
         </nav>
     </header>
-    <div class="container row row-cols-1 row-cols-md-3 row-cols-lg-3 mx-auto my-4 bg-warning">
-        <div class="col text-center my-auto">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search">
-                <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+    <div class="container row row-cols-1 row-cols-md-3 row-cols-lg-3 mx-auto my-4 bg-warning w-75">
+        <div class="col  my-auto">
+            <form class="form-inline my-2 my-lg-0 text-center ">
+                <input class="form-control ml-auto mr-sm-2" type="search" id="search" placeholder="Search">
+                <button class="btn btn-dark my-2 my-sm-0 mr-auto" type="submit">Search</button>
             </form>
             <p id="result"></p>
         </div>
@@ -63,7 +63,7 @@
         </div>
         <div class="col text-center my-auto">
             <div class='card bg-transparent'>
-                <img src="img/logo.png" style="width: 80%">
+                <img class="img-fluid mx-auto" src="img/logo.png" style="width: 60%">
             </div>
         </div>
     </div>

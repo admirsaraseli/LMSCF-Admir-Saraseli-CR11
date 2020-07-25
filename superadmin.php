@@ -53,7 +53,7 @@
                             Hi <?php echo $userRow['userName']; ?>
                         </span> 
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item my-auto">
                         <a href="login/logout.php?logout" class="nav-link  btn btn-outline-warning">Log out</a>
                     </li>
                 </ul>   

@@ -53,7 +53,6 @@
             </div>
         </nav>
     </header>
-
 	<div class="container mt-4 mx-auto text-center">
 		<h3 class="text-white">Do you really want to delete this user?</h3>
 		<form action ="actions/a_delete_user.php" method="post">
