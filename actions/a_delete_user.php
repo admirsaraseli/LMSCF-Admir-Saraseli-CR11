@@ -9,10 +9,10 @@
         exit;
     }
 
-    // select logged-in users details
-    $res=mysqli_query($conn, "SELECT * FROM users WHERE user_id=".$_SESSION['user']);
-    $res2=mysqli_query($conn, "SELECT * FROM users" );
-    $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);   
+    // select logged-in admins details
+    $sql = "SELECT * FROM users WHERE user_id=".$_SESSION['superadmin'];
+    $result = mysqli_query($conn, $sql);
+    $userRow = mysqli_fetch_assoc($result);   
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,13 +30,9 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">All cuties<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="general.php">Small&Large</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="senior.php">Seniors</a>
+                        <a class="nav-link" href="admin.php">All cuties<span class="sr-only">(current)</span></a>
+                    </li><li class="nav-item">
+                        <a class="nav-link text-warning" href="insert.php">Add a pet</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -59,11 +55,11 @@
     		if ($_POST) {
     			$id = $_POST['id'];
 
-    			$sql = "DELETE FROM animals WHERE animal_id = {$id}";
+    			$sql = "DELETE FROM users WHERE user_id = {$id}";
 
     			if($conn->multi_query($sql) === TRUE) {
-    				echo "<h1>Successfully adopted!!</h1>" ;
-    				header("Refresh: 3; url= ../index.php");
+    				echo "<h1>Successfully deleted!!</h1>" ;
+    				header("Refresh: 3; url= ../admin.php");
     			} else {
     			echo "Error updating record : " . $conn->error;
     			}

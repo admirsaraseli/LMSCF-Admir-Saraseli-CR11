@@ -53,8 +53,6 @@
   	
     <div class="container mt-4 mx-auto text-center">
 		<?php
-			require_once 'db_connect.php';
-
 			// Escape user inputs for security
 			$name = mysqli_real_escape_string($conn, $_POST['name']);
 			$image = mysqli_real_escape_string($conn, $_POST['image']);

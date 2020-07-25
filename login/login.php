@@ -55,8 +55,8 @@
                     header( "Location: ../admin.php");
                 }else if ($row["status"] == 'superadmin'){
                     $_SESSION['superadmin'] = $row['user_id'];
-                    header( "Location: ../super_admin.php");    
-                }else if ($row["status"] == 'user'){
+                    header( "Location: ../superadmin.php");    
+                }else {
                     $_SESSION['user'] = $row['user_id'];
                     header( "Location: ../index.php");    
                 }

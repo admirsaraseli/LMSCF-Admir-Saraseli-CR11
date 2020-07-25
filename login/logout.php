@@ -7,7 +7,7 @@
 	} else if(isset($_SESSION[ 'admin'])!="") {
 	 header("Location: admin.php");
 	} else if(isset($_SESSION[ 'superadmin'])!="") {
-	 header("Location: super_admin.php");
+	 header("Location: superadmin.php");
 	}
 
 	if  (isset($_GET['logout'])) {
