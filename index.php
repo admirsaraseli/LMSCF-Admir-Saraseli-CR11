@@ -83,7 +83,7 @@
 					<h3 class='card-title'>Meet: ". $row['name']." </h3>
 					<img src='" .$row['image']." ' class='card-img-top' alt='...' >
 					<div class='card-body'>
-						<p class='card-text'>". $row['description']."</p>
+						<p class='card-text desc'>". $row['description']."</p>
 						<h6 class='card-text'>Type: <span class='text-info mr-3'>".$row['type'].",</span>
 						Age:<span class='text-info'> ".$row['age']."</span></h6>
 						<h6 class='card-text'>Hobbies: <span class='text-info'>".$row['hobbies']."</span> </h6>
@@ -102,8 +102,8 @@
 		mysqli_close($conn);
 	?>
 	</div>
-	<script>
 
+	<script>
 		var request;
 
 		$("#search").keyup(function(event){
@@ -143,9 +143,7 @@
 		  		document.getElementById("result").innerHTML = "";
 		 	}   
 		});
-	</script>
-
-		
+	</script>	
 	
 	<div class="card-footer text-white bg-transparent text-center font-weight-bold">Admir &copy; 2020 </div>
 </body>
