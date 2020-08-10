@@ -85,45 +85,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login & Registration System</title>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Login & Registration System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body class="bg-info">
+<body>
   
-    <div class="container bg-light w-50 mt-4">
+    <div class="container bgg w-50 my-4 py-3">
         <h3 class="text-center text-red my-3"><?php if ( isset($errMSG) ) {echo  $errMSG; }?></h3>
-        <div id="login-row" class="row justify-content-center ">
-          <div id="login-column" class="col-sm-8">
-            <form method="post"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete= "off">
-                <h3 class="text-center text-info">Register</h3>
-                <div class="form-group">
-                    <label for="name" class="text-info">Yourname:</label><br>
-                    <input type="text" name="name" id="name" class="form-control" placeholder= "Enter Full Name" value="<?php echo $name;?>" maxlength="50">
-                    <span class="text-danger"><?php  echo $nameError; ?></span >
-                </div>
-                <div class="form-group">
-                    <label for="username" class="text-info">Username:</label><br>
-                    <input type="email" name="email" id="email" class="form-control" placeholder= "Enter Your Email" value="<?php echo $email;?>" maxlength="40">
-                    <span class="text-danger"><?php  echo $emailError; ?></span >
-                </div>
-                <div class="form-group">
-                    <label for="password" class="text-info">Password:</label><br>
-                    <input type="password" name="pass" id="password" class="form-control" placeholder="Enter Password"  maxlength="15">
-                    <span class="text-danger"><?php  echo $passError; ?></span>
-                </div>
-                <div class="form-group">
-                    <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                    <input type="submit" name="btn-signup" class="btn btn-info btn-md" value="Sign Up">
-                    <a href="../index.php" class="ml-5 btn btn-outline-info ">
-                    Sign in here 
-                    </a>
-                </div>
-            </form>
-          </div>
-        </div>
-    </div>  
+        <form method="post"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete= "off">
+            <h3 class="text-center text-info">Register</h3>
+            <div class="form-group col-sm-10  mx-auto px-0">
+                <label for="name" class="text-info">Your name:</label><br>
+                <input type="text" name="name" id="name" class="form-control" placeholder= "Enter Full Name" value="<?php echo $name;?>" maxlength="50">
+                <span class="text-danger"><?php  echo $nameError; ?></span >
+            </div>
+            <div class="form-group col-sm-10  mx-auto px-0">
+                <label for="username" class="text-info">Username:</label><br>
+                <input type="email" name="email" id="email" class="form-control" placeholder= "Enter Your Email" value="<?php echo $email;?>" maxlength="40">
+                <span class="text-danger"><?php  echo $emailError; ?></span >
+            </div>
+            <div class="form-group col-sm-10  mx-auto px-0">
+                <label for="password" class="text-info">Password:</label><br>
+                <input type="password" name="pass" id="password" class="form-control" placeholder="Enter Password"  maxlength="15">
+                <span class="text-danger"><?php  echo $passError; ?></span>
+            </div>
+            <div class="form-group col-sm-10  mx-auto px-0">
+                <label for="remember-me" class="text-info my-auto"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+            </div>
+            <div class="form-group col-sm-10  mx-auto px-0">  
+                <input type="submit" name="btn-login" class="btn btn-info btn-md mb-2" value="Sign Up">
+                <a href="../index.php" class=" btn btn-outline-info btn-md mb-2">
+                Sign in here 
+                </a>
+            </div>
+           
+        </form>
+</div>  
 </body >
 </html >
 <?php  ob_end_flush(); ?>

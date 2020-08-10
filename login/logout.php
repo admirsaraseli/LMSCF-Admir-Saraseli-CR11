@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if( !isset($_SESSION['admin']) && !isset($_SESSION['user']) ){
+	if( !isset($_SESSION['admin']) && !isset($_SESSION['user']) && !isset($_SESSION['superadmin']) ){
 	 header( "Location: login/login.php");
 	} else if(isset($_SESSION[ 'user'])!="") {
 	 header("Location: index.php");

@@ -8,6 +8,11 @@
         header("Location: login/login.php");
         exit;
     }
+
+    // select logged-in users details
+    $res=mysqli_query($conn, "SELECT * FROM users WHERE user_id=".$_SESSION['user']);
+    $res2=mysqli_query($conn, "SELECT * FROM users" );
+    $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,6 +24,9 @@
 	<meta name="author" content="Admir Saraseli">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -38,13 +46,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="senior.php">Seniors</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a href="login/logout.php?logout" class="nav-link  btn btn-outline-warning">Log out</a>
-                    </li>
-                </ul>   
+                </ul>  
             </div>
+            <span class="ml-auto text-white mr-3">
+                <img class="rounded" style="height: 40px; width: 40px" src="<?php echo $userRow['image'];?>">
+                Hi <?php echo $userRow['userName']; ?>
+            </span>
+            <a href="login/logout.php?logout" class="nav-link  btn btn-outline-warning">Log out</a>
         </nav>
     </header>
     <div class="container row row-cols-1 row-cols-md-3 row-cols-lg-3 mx-auto my-4 bg-warning w-75">
@@ -82,7 +90,7 @@
 						<h5 class='card-text'> ".$row['location']." </h5>     
 					</div>
 					<div class='card-footer text-center p-1'>
-						<a href='details.php?title=".$row['title']."&image=".$row['image']."&author=".$row['name']."&status=".$row['status']."&isbn=".$row['isbn']."&desc=".$row['description']."&date=".$row['publish_date']."&type=".$row['type']."&publisher=".$row['publisher_name']."' class='btn btn-outline-info btn-sm mx-auto w-75'>Take me home</a>
+						<a href='adopt.php?id=".$row['animal_id']."' class='btn btn-outline-success  mx-auto '>Take me home</a>
 					</div>
 				</div>
 			</div>";
